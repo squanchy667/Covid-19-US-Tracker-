@@ -1,0 +1,77 @@
+<mat-card class="card">
+    <mat-card-title>
+        Unites States Covid-19 Updates
+    </mat-card-title>
+    <mat-card-subtitle>{{currentDate}}</mat-card-subtitle>
+    <mat-card-title-group *ngIf='summaryData'>
+        <mat-card class="death">
+            <p > Total Death: {{summaryData.death}}</p>
+            <p>Death Increase: {{summaryData.deathIncrease}}</p>
+        </mat-card>
+        <mat-card class="hospital">
+            <p> Hospitalized: {{summaryData.hospitalized}}</p>
+            <p> Currently Hospitalized: {{summaryData.hospitalizedCurrently}}</p>
+            <p> Increase Hospitalized: {{summaryData.hospitalizedIncrease}}</p>
+        </mat-card>
+        <mat-card class="positive">
+            <p>Total Positive: {{summaryData.positive}}</p>
+            <p>Positive Increase: {{summaryData.positiveIncrease}}</p>
+            <p>Pending: {{summaryData.pending}}</p>
+        </mat-card>
+        <mat-card class="negative">
+            <p>Total Negative: {{summaryData.negative}}</p>
+            <p>Negative Increase: {{summaryData.negativeIncrease}}</p>
+        </mat-card>
+        <mat-card class="ICU">
+            <p>  In ICU Currently: {{summaryData.inIcuCurrently}}</p>
+            <p> On Ventilator Currently: {{summaryData.onVentilatorCurrently}}</p>
+        </mat-card>
+    </mat-card-title-group>
+  </mat-card>
+  <div class="us-map">
+    <us-map [fillStateColor]="mapFillColor" [fillColor]="stateTextFillColor" [strokeColor]="stateStrokeColor" (onMapClick)="printState($event)"></us-map>
+  </div>
+  <div *ngIf='stateData'>
+    <mat-card class="card" *ngIf='stateInfo'>
+        <mat-card-title>
+            {{stateInfo.name}} State Covid-19 Updates
+        </mat-card-title>
+        <mat-card-subtitle>
+            {{currentDate}}
+            State's last reported update time :  {{stateData.lastUpdateEt}}
+        </mat-card-subtitle>
+        <mat-card-title-group>
+            <mat-card class="death">
+                <p> Total Death: {{stateData.death}}</p>
+                <p>Death Increase: {{stateData.deathIncrease}}</p>
+            </mat-card>
+            <mat-card class="hospital">
+                <p> Hospitalized: {{stateData.hospitalized}}</p>
+                <p> Currently Hospitalized: {{stateData.hospitalizedCurrently}}</p>
+                <p> Increase Hospitalized: {{stateData.hospitalizedIncrease}}</p>
+            </mat-card>
+            <mat-card class="positive">
+                <p>Total Positive: {{stateData.positive}}</p>
+                <p>Positive Increase: {{stateData.positiveIncrease}}</p>
+                <p>Pending: {{stateData.pending}}</p>
+            </mat-card>
+            <mat-card class="negative">
+                <p>Total Negative: {{stateData.negative}}</p>
+                <p>Negative Increase: {{stateData.negativeIncrease}}</p>
+            </mat-card>
+            <mat-card class="ICU">
+                <p>  In ICU Currently: {{stateData.inIcuCurrently}}</p>
+                <p> On Ventilator Currently: {{stateData.onVentilatorCurrently}}</p>
+            </mat-card>
+        </mat-card-title-group>
+            <mat-card-body>
+                <div>
+                    <div>
+                        <p><a href="{{stateInfo.covid19Site}}">Best Current Data Source</a></p>
+                        <p><a href="{{stateInfo.covid19SiteOld}}">Secondary Data Source</a></p>
+                    </div>
+                    <i>{{stateInfo.notes}}</i>
+                </div>
+            </mat-card-body> 
+      </mat-card>
+  </div>
