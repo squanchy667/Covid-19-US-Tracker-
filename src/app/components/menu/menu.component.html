@@ -64,13 +64,17 @@
                 <p> On Ventilator Currently: {{stateData.onVentilatorCurrently}}</p>
             </mat-card>
         </mat-card-title-group>
+        <br>
             <mat-card-body>
                 <div>
                     <div>
                         <p><a href="{{stateInfo.covid19Site}}">Best Current Data Source</a></p>
                         <p><a href="{{stateInfo.covid19SiteOld}}">Secondary Data Source</a></p>
                     </div>
-                    <i>{{stateInfo.notes}}</i>
+                    <br>
+                    <div class="text" *ngIf="this.text">
+                        <p>{{this.text}}</p>
+                    </div>
                 </div>
             </mat-card-body> 
       </mat-card>

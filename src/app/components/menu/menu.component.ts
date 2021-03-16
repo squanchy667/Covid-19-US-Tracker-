@@ -15,6 +15,7 @@ export class MenuComponent implements OnInit {
   summaryData;
   stateData;
   stateInfo;
+  text: string;
   usState = new BehaviorSubject(null);
   currentDate: string; 
   mapFillColor = '#c5e8f0';
@@ -51,7 +52,10 @@ export class MenuComponent implements OnInit {
     this.service.stateInfo(currentState).subscribe(
       response=>{
         this.stateInfo = response
-        console.log(this.stateInfo.notes);
+        let re = "."
+        let to = "\n"
+        this.text = (this.stateInfo.notes).replace(re, to);
+        console.log(this.text)
       }
     )
   }

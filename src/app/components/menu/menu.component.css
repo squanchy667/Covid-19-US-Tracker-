@@ -49,3 +49,43 @@ td {
 a {
     color: black;
 }
+.death {
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+
+.hospital {
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+
+.positive {
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+
+.negative {
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+
+.ICU {
+    text-align: center;
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+  }
+
